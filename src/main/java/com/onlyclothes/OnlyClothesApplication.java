@@ -1,10 +1,9 @@
 package com.onlyclothes;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;;
 
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class) //es una exclusion para correr el programa 
+@SpringBootApplication
 public class OnlyClothesApplication {
 
 	public static void main(String[] args) {

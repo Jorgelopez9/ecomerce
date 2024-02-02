@@ -2,14 +2,34 @@ package com.onlyclothes.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+@Entity
+@Table(name = "ordenes")
 public class Orden {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer Id;
 	private String Numero;
 	private Date FechaCreacion;
 	private Date FechaRecivida;
 	private double Total;
 	
+	@ManyToOne
+	private Usuario usuario;
+	
+	@OneToOne(mappedBy = "orden")
+	private DetalleOrden detalle;
+	
 	public Orden() {
+		
 	}
 
 	public Orden(Integer id, String numero, Date fechaCreacion, Date fechaRecivida, double total) {
@@ -59,6 +79,22 @@ public class Orden {
 
 	public void setTotal(double total) {
 		Total = total;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public DetalleOrden getDetalle() {
+		return detalle;
+	}
+
+	public void setDetalle(DetalleOrden detalle) {
+		this.detalle = detalle;
 	}
 
 	@Override
