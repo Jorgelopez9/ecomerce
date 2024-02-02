@@ -77,6 +77,12 @@ public class Usuario {
 	public void setPassword(String password) {
 		Password = password;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Usuario [Id=" + Id + ", Nombre=" + Nombre + ", UserName=" + UserName + ", Email=" + Email
+				+ ", Direccion=" + Direccion + ", Telefono=" + Telefono + ", Tipo=" + Tipo + ", Password=" + Password
+				+ "]";
+	}
 	
 }
